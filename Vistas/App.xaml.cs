@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace LPOO2_GRUPO_17
+namespace Vistas
 {
     /// <summary>
     /// Interaction logic for App.xaml
