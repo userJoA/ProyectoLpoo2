@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClasesBase
 {
-    internal class Categoria
+    public class Categoria
     {
+        private static int NEXTID = 0;
         public int Cat_ID { get; set; }
-        public string Cat_Name { get; set; }
-        public string Cat_Description { get;set; }
+        public string? Cat_Name { get; set; }
+        public string? Cat_Description { get;set; }
 
         public Categoria(int cat_ID, string cat_Name, string cat_Description)
         {
@@ -19,6 +20,10 @@ namespace ClasesBase
             Cat_Description = cat_Description;
         }
 
-        public Categoria() { }
+        public Categoria() 
+        {
+            NEXTID++;
+            this.Cat_ID = NEXTID;
+        }
     }
 }

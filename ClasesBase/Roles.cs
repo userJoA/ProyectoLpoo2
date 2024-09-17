@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ClasesBase
 {
-    internal class Roles
+    public class Roles
     {
-        private int Rol_Code {  get; set; }
-        private string Rol_Description { get; set; }
+        public int Rol_Code {  get; set; }
+        public string Rol_Description { get; set; }
 
         public Roles() { }
     }

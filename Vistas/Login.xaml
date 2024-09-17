@@ -5,10 +5,109 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vistas"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="606,217,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="476,129,0,0" VerticalAlignment="Top"/>
+        Title="Login" 
+        Height="500" 
+        Width="400" 
+        Background="Transparent" 
+        WindowStyle="None" 
+        AllowsTransparency="True" ResizeMode="NoResize" MouseDown="Window_MouseDown">
 
-    </Grid>
+    <Border Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="INGRESO AL SISTEMA"
+                           FontSize="16"
+                           FontFamily="Montserrat"
+                           FontWeight="SemiBold"
+                           Foreground="DarkGray"
+                           VerticalAlignment="Center"
+                           Margin="10,0,0,0">
+                    
+                </TextBlock>
+                <Button x:Name="btnMinimize"
+                    
+                    BorderThickness="0"
+                    Content="-"
+                    FontSize="16"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    Grid.Column="1" Click="btnMinimize_Click">
+                </Button>
+                <Button x:Name="btnClose"
+                    Background="Red"
+                    BorderThickness="0"
+                    Content="x"
+                    FontSize="16"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    Grid.Column="2" Click="btnClose_Click">
+                </Button>
+            </Grid>
+            <StackPanel Grid.Row="2"
+                        Orientation="Vertical"
+                        >
+                <TextBlock Text="USERNAME"
+                           Foreground="DarkGray"
+                           FontSize="18"
+                           FontWeight="Medium"
+                           Margin="0,100,0,0" Width="300">
+                    
+                </TextBlock>
+                <TextBox x:Name="txtUser"
+                         FontSize="18"
+                          
+                         BorderThickness="0,0,0,1"
+                         VerticalContentAlignment="Center"
+                         Height="30"
+                         Margin="0,5,0,0"
+                         Foreground="Gray"
+                         CaretBrush="LightGray"
+                         BorderBrush="Gray" Width="300">
+                 </TextBox>
+
+                <TextBlock Text="PASSWORD"
+                           Foreground="DarkGray"
+                           FontSize="18"
+                           FontWeight="Medium"
+                           Margin="0,50,0,0" Width="300">
+
+                </TextBlock>
+                <PasswordBox x:Name="txtPassword"
+                         FontSize="18"
+                         
+                         BorderThickness="0,0,0,1"
+                         VerticalContentAlignment="Center"
+                         Foreground="Gray"
+                         Height="30"
+                         Margin="0,5,0,0"
+                         CaretBrush="LightGray"
+                         BorderBrush="Gray" Width="300">
+                </PasswordBox>
+
+                <Button x:Name="btnLogin"
+                    Margin="100"
+                    BorderThickness="0"
+                    Content="Login"
+                    FontSize="16"
+                    Height="40"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    Grid.Column="2" Click="btnLogin_Click">
+                </Button>
+            </StackPanel>
+
+
+        </Grid>
+    </Border>
+
+
 </Window>

@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace ClasesBase
 {
-    internal class Atleta
+    public class Atleta
     {
+        private static int NEXTID = 0;
         private int Atl_ID { get; set; }
-        private string Atl_Name { get; set; }
-        private string Atl_LastName { get; set; }
-        private int Atl_DNI { get;set; }
-        private string Atl_Email { get;set;}
-        private string Atl_Nationality { get; set; }
-        private string Atl_Coach { get; set; }
-        private string Atl_Gender { get; set; }
-        private double Atl_Heigth { get; set; }
-        private DateTime Atl_BirthDate { get;set ;}
-        private double Atl_Weight { get; set; }
-        private string Atl_Address { get; set; }
+        public string? Atl_Name { get; set; }
+        public string? Atl_LastName { get; set; }
+        public int Atl_DNI { get;set; }
+        public string? Atl_Email { get;set;}
+        public string? Atl_Nationality { get; set; }
+        public string? Atl_Coach { get; set; }
+        public string? Atl_Gender { get; set; }
+        public double Atl_Heigth { get; set; }
+        public DateTime Atl_BirthDate { get;set ;}
+        public double Atl_Weight { get; set; }
+        public string? Atl_Address { get; set; }
 
-        public Atleta(int atl_ID, string atl_Name, string atl_LastName, int atl_DNI, string atl_Email, string atl_Nationality, string atl_Coach, string atl_Gender, double atl_Heigth, DateTime atl_BirthDate, double atl_Weight, string atl_Address)
+        public Atleta(string atl_Name, string atl_LastName, int atl_DNI, string atl_Email, string atl_Nationality, string atl_Coach, string atl_Gender, double atl_Heigth, DateTime atl_BirthDate, double atl_Weight, string atl_Address)
         {
-            Atl_ID = atl_ID;
+            NEXTID++;
+            this.Atl_ID = NEXTID;
             Atl_Name = atl_Name;
             Atl_LastName = atl_LastName;
             Atl_DNI = atl_DNI;
@@ -37,6 +39,10 @@ namespace ClasesBase
             Atl_Address = atl_Address;
         }
 
-        public Atleta() { }
+        public Atleta() 
+        {
+            NEXTID++;
+            this.Atl_ID = NEXTID;
+        }
     }
 }
