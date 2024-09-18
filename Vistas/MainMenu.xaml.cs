@@ -23,5 +23,51 @@ namespace Vistas
         {
             InitializeComponent();
         }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+
+        private void btnCloseMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void btnMinimizeMenu_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnCategories_Click(object sender, RoutedEventArgs e)
+        {
+            ContentArea.Content = new CategoriesView();
+        }
+
+        private void btnSystem_Click(object sender, RoutedEventArgs e)
+        {
+            ContentArea.Content = new SystemView();
+        }
+
+        private void btnCompetition_Click(object sender, RoutedEventArgs e)
+        {
+            ContentArea.Content= new CompetitionsView();
+        }
+
+        private void btnParticipants_Click(object sender, RoutedEventArgs e)
+        {
+            ContentArea.Content = new ParticipantsView();
+        }
+
+        private void btnEvents_Click(object sender, RoutedEventArgs e)
+        {
+            ContentArea.Content = new EventsView();
+        }
+
+        private void btnDiscplines_Click(object sender, RoutedEventArgs e)
+        {
+            ContentArea.Content = new DisciplinesView();
+        }
     }
 }
