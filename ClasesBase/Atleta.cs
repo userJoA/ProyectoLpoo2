@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ClasesBase
 {
@@ -44,5 +45,22 @@ namespace ClasesBase
             NEXTID++;
             this.Atl_ID = NEXTID;
         }
+
+        public void ToString()
+        {
+            MessageBox.Show("Nombre: " + this.Atl_Name + "\n" +
+                            "Apellido: " + this.Atl_LastName + "\n" +
+                            "DNI: " + this.Atl_DNI + "\n" +
+                            "Nacionalidad: " + this.Atl_Nationality + "\n" +
+                            "Entrenador: " + this.Atl_Coach + "\n" +
+                            "Genero: " + this.Atl_Gender + "\n" +
+                            "Altura: " + this.Atl_Heigth + "\n" +
+                            "Peso: " + this.Atl_Weight + "\n" +
+                            "Fecha de Nacimiento: " + this.Atl_BirthDate + "\n" +
+                            "Direccion: " + this.Atl_Address + "\n" +
+                            "Email: " + this.Atl_Email + "\n" +
+                            "ID: " + this.Atl_ID + "\n");
+        }
+
     }
 }

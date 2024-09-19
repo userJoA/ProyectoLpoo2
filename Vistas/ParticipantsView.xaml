@@ -63,7 +63,7 @@
                     Grid.Column="1"
                     x:Name="btnCreatePart"
                     Content="Agregar Participante"
-                    Cursor="Hand">
+                    Cursor="Hand" Click="btnCreatePart_Click">
                 
             </Button>
             <!--#endregion-->
@@ -123,7 +123,7 @@
             </TextBlock>
             <ComboBox Grid.Row="10"
                       Grid.Column="2"
-                      x:Name="Countries">
+                      x:Name="cbxCountries">
                 
             </ComboBox>
 
@@ -137,7 +137,7 @@
             </TextBlock>
             <ComboBox Grid.Row="12" 
                       Grid.Column="2"
-                      x:Name="Genders">
+                      x:Name="cbxGenders">
                 
             </ComboBox>
 
@@ -208,11 +208,12 @@
                        VerticalAlignment="Center">
 
             </TextBlock>
-            <DatePicker Grid.Row="22"
+            <DatePicker x:Name="dtpBirthDate" 
+                        Grid.Row="22"
                         Grid.Column="2">
                 
             </DatePicker>
-
+           
             <!--#endregion-->
         </Grid>
     </Border>

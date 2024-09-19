@@ -50,7 +50,7 @@
                     Grid.Column="1"
                     x:Name="btnCreateDisc"
                     Content="Agregar Disciplinas"
-                    Cursor="Hand">
+                    Cursor="Hand" Click="btnCreateDisc_Click">
 
             </Button>
             <!--#endregion-->

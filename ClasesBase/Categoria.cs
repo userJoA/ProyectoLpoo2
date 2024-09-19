@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ClasesBase
 {
@@ -24,6 +25,13 @@ namespace ClasesBase
         {
             NEXTID++;
             this.Cat_ID = NEXTID;
+        }
+        
+        public void ToString()
+        {
+            MessageBox.Show("Nombre: " + this.Cat_Name + "\n" +
+                            "Descripcion: " + this.Cat_Description + "\n" +
+                            "ID: " + this.Cat_ID + "\n");
         }
     }
 }

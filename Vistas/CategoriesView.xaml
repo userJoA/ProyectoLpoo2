@@ -48,9 +48,9 @@
             <!--#region BUTTON CREATE -->
             <Button Grid.Row="2" 
                     Grid.Column="1"
-                    x:Name="btnCreateDisc"
+                    x:Name="btnCreateCat"
                     Content="Agregar Categorias"
-                    Cursor="Hand">
+                    Cursor="Hand" Click="btnCreateCat_Click">
 
             </Button>
             <!--#endregion-->

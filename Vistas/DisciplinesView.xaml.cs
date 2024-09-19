@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using ClasesBase;
 namespace Vistas
 {
     /// <summary>
@@ -23,6 +23,21 @@ namespace Vistas
         public DisciplinesView()
         {
             InitializeComponent();
+        }
+
+        public void clear() 
+        {
+            txtDescription.Clear();
+            txtName.Clear();    
+        }
+
+        private void btnCreateDisc_Click(object sender, RoutedEventArgs e)
+        {
+           Disciplina oDisc= new Disciplina();
+            oDisc.Dis_Name = txtName.Text;
+            oDisc.Dis_Description = txtDescription.Text;
+            oDisc.ToString();
+            clear();
         }
     }
 }

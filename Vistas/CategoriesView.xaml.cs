@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ClasesBase;
 
 namespace Vistas
 {
@@ -22,7 +23,21 @@ namespace Vistas
     {
         public CategoriesView()
         {
-            InitializeComponent();
+            InitializeComponent();         
+        }
+
+        public void clear() 
+        {
+            txtDescription.Clear();
+            txtName.Clear();    
+        }
+        private void btnCreateCat_Click(object sender, RoutedEventArgs e)
+        {
+            Categoria oCat = new Categoria();
+            oCat.Cat_Name=txtDescription.Text;
+            oCat.Cat_Description=txtDescription.Text;
+            oCat.ToString();
+            clear();
         }
     }
 }
