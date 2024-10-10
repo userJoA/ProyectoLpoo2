@@ -13,22 +13,22 @@
                 <ColumnDefinition Width="40"/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="40"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"/>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="*"/>
                 <RowDefinition Height="50"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="60"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
-
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
             <!--#endregion-->
@@ -49,9 +49,10 @@
             <Button Grid.Row="2" 
                     Grid.Column="1"
                     x:Name="btnCreateCat"
-                    Content="Agregar Categorias"
+                    Content="Agregar Categoria"
+                    Style="{StaticResource btnOk}"
                     Cursor="Hand" Click="btnCreateCat_Click">
-
+                    
             </Button>
             <!--#endregion-->
             <!--#endregion-->
@@ -60,30 +61,33 @@
                        Grid.Column="1"
                        Text="Nombre"
                        x:Name="txbName"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center">
+                       Style="{StaticResource CustomTextBlockStyle}">
 
             </TextBlock>
             <TextBox Grid.Row="4" 
                        Grid.Column="2"
                        x:Name="txtName"
-                       Background="#eff5ff">
+                       Grid.ColumnSpan="2"
+                       Style="{StaticResource CustomTextBoxStyle}">
             </TextBox>
 
             <TextBlock Grid.Row="6"
                        Grid.Column="1"
-                       Text="Description"
+                       Text="Descripcion"
                        x:Name="txbDescription"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center">
+                       Style="{StaticResource CustomTextBlockStyle}">
 
             </TextBlock>
             <TextBox Grid.Row="6" 
                        Grid.Column="2"
                        x:Name="txtDescription"
-                       Background="#eff5ff">
+                       Grid.ColumnSpan="2"
+                       Grid.RowSpan="2"
+                       Height="100"
+                       VerticalAlignment="Top"
+                       Style="{StaticResource CustomTextBoxStyle}">
             </TextBox>
-
+        
             <!--#endregion-->
         </Grid>
     </Border>

@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:Vistas"
              StartupUri="Login.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/StyleA.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/Template.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

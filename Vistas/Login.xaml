@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:Vistas"
         xmlns:local="clr-namespace:Vistas"
         mc:Ignorable="d"
         Title="Login" 
@@ -52,7 +53,11 @@
                     Grid.Column="2" Click="btnClose_Click">
                 </Button>
             </Grid>
-            <StackPanel Grid.Row="2"
+            <!--CONTROL USER--> 
+            <Border Grid.Row="2">
+                <local:LoginUC x:Name="LoginUC"/>
+            </Border>
+            <!--<StackPanel Grid.Row="2"
                         Orientation="Vertical"
                         >
                 <TextBlock Text="USERNAME"
@@ -103,7 +108,7 @@
                     Cursor="Hand"
                     Grid.Column="2" Click="btnLogin_Click">
                 </Button>
-            </StackPanel>
+            </StackPanel>-->
 
 
         </Grid>
