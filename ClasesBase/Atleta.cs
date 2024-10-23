@@ -1,13 +1,16 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ClasesBase
 {
-    public class Atleta
+    public class Atleta:IDataErrorInfo
     {
         private static int NEXTID = 0;
         private int Atl_ID { get; set; }
@@ -22,6 +25,44 @@ namespace ClasesBase
         public DateTime Atl_BirthDate { get;set ;}
         public double Atl_Weight { get; set; }
         public string? Atl_Address { get; set; }
+
+        public string Error
+        {
+            get { throw new NotImplementedException(); }
+        }
+        
+        public string this[string columnName]
+        { 
+            get 
+            {
+                string msg_error = null;
+                switch (columnName)
+                {
+                    case "DNI":
+                        if (Atl_DNI <= 0)
+                            msg_error = "El DNI es obligatorio.";
+                        break;
+                    case "Nombre":
+                        if (string.IsNullOrEmpty(Atl_Name))
+                            msg_error = "El Nombre es obligatorio.";
+                        break;
+                    case "Apellido":
+                        if (string.IsNullOrEmpty(Atl_LastName))
+                            msg_error = "El Apellido es obligatorio.";
+                        break;
+                    case "Altura":
+                        if (Atl_Heigth <= 50)
+                            msg_error = "La altura debe ser mayor a cero.";
+                        break;
+                    case "Peso":
+                        if (Atl_Weight <= 20)
+                            msg_error = "El peso debe ser mayor a cero.";
+                        break;
+                }
+                return msg_error;
+
+            } 
+        }
 
         public Atleta(string atl_Name, string atl_LastName, int atl_DNI, string atl_Email, string atl_Nationality, string atl_Coach, string atl_Gender, double atl_Heigth, DateTime atl_BirthDate, double atl_Weight, string atl_Address)
         {
