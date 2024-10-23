@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<estados>
+	<estado name="programado"/>
+	<estado name="postergado"/>
+	<estado name="reprogramado"/>
+	<estado name="cancelado"/>
+</estados>
