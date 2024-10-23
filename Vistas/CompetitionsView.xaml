@@ -14,7 +14,7 @@
             x:Key="list_Comptencies"/>
     </UserControl.Resources>
     <Grid Background="DarkGray">
-        <ListView Name ="Competencias" Height="300"  Margin="15,42,12,77" ItemsSource="{Binding Source={StaticResource list_Comptencies}}">
+        <ListView Name ="Competencias"  Margin="15,58,10,265" ItemsSource="{Binding Source={StaticResource list_Comptencies}}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="100" Header="Nombre" DisplayMemberBinding="{Binding Path=Com_Nombre}"/>
