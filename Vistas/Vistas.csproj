@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="EstadosComp.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="EstadosComp.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ClasesBase\ClasesBase.csproj" />
   </ItemGroup>
 
