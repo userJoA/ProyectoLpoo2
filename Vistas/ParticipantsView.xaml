@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:Vistas"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Border>
+    <!--<Border>
         <Grid Background="White">
-            <!--#region GRID COLUMNS AND ROWS DEFINITION -->
+            --><!--#region GRID COLUMNS AND ROWS DEFINITION --><!--
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="40"/>
                 <ColumnDefinition/>
@@ -44,8 +44,8 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
-            <!--#endregion-->
-            <!--#region TITLE -->
+            --><!--#endregion-->
+            <!--#region TITLE --><!--
             <TextBlock Grid.Row="1" 
                        x:Name="Title"
                        Grid.Column="1" 
@@ -56,9 +56,9 @@
                        HorizontalAlignment="Center">
                
             </TextBlock>
-            <!--#endregion-->
+            --><!--#endregion-->
             <!--#region BUTTONS -->
-            <!--#region BUTTON CREATE -->
+            <!--#region BUTTON CREATE --><!--
             <Button Grid.Row="2" 
                     Grid.Column="1"
                     x:Name="btnCreatePart"
@@ -66,9 +66,9 @@
                     Cursor="Hand" Click="btnCreatePart_Click">
                 
             </Button>
+            --><!--#endregion-->
             <!--#endregion-->
-            <!--#endregion-->
-            <!--#region CONTENT -->
+            <!--#region CONTENT --><!--
             <TextBlock Grid.Row="4"
                        Grid.Column="1"
                        Text="Nombre"
@@ -214,7 +214,24 @@
                 
             </DatePicker>
            
-            <!--#endregion-->
+            --><!--#endregion--><!--
         </Grid>
-    </Border>
+    </Border>-->
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Grid.Row="0" Margin="5,25">
+            <Button x:Name="btnNewPart" Height="30" Margin="0,0,0,20" Click="btnNewPart_Click" Width="200">Agregar nuevo Participante</Button>
+            <TextBlock Height="20" Text="Buscar Participante por ID" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Style="{StaticResource CustomTextBoxStyle}"  Margin="10" Height="30"></TextBox>
+            <Button x:Name="btnGetPart" Height="30" Width="50">Buscar</Button>
+        </StackPanel>
+        <Grid Grid.Column="1">
+            <ContentControl x:Name="ContentArea"/>
+        </Grid>
+    </Grid>
 </UserControl>

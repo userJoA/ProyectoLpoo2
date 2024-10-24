@@ -21,7 +21,7 @@ namespace ClasesBase
         public string? Atl_Nationality { get; set; }
         public string? Atl_Coach { get; set; }
         public string? Atl_Gender { get; set; }
-        public double Atl_Heigth { get; set; }
+        public double Atl_Height { get; set; }
         public DateTime Atl_BirthDate { get;set ;}
         public double Atl_Weight { get; set; }
         public string? Atl_Address { get; set; }
@@ -39,24 +39,19 @@ namespace ClasesBase
                 switch (columnName)
                 {
                     case "DNI":
-                        if (Atl_DNI <= 0)
-                            msg_error = "El DNI es obligatorio.";
+                            msg_error = validate_DNI();
                         break;
                     case "Nombre":
-                        if (string.IsNullOrEmpty(Atl_Name))
-                            msg_error = "El Nombre es obligatorio.";
+                            msg_error = validate_name();
                         break;
                     case "Apellido":
-                        if (string.IsNullOrEmpty(Atl_LastName))
-                            msg_error = "El Apellido es obligatorio.";
+                            msg_error = validate_lastname();
                         break;
                     case "Altura":
-                        if (Atl_Heigth <= 50)
-                            msg_error = "La altura debe ser mayor a cero.";
+                            msg_error = validate_height();
                         break;
                     case "Peso":
-                        if (Atl_Weight <= 20)
-                            msg_error = "El peso debe ser mayor a cero.";
+                            msg_error = validate_weight();
                         break;
                 }
                 return msg_error;
@@ -64,7 +59,60 @@ namespace ClasesBase
             } 
         }
 
-        public Atleta(string atl_Name, string atl_LastName, int atl_DNI, string atl_Email, string atl_Nationality, string atl_Coach, string atl_Gender, double atl_Heigth, DateTime atl_BirthDate, double atl_Weight, string atl_Address)
+        private string validate_DNI() 
+        {
+            if(Atl_DNI <= 0)
+            {
+                return "El DNI es obligatorio.";
+            }
+            else if(Atl_DNI < 1000000)
+            {
+                return "Debe tener como minimo 7 digitos";
+            }
+            return null;
+        }
+
+        private string validate_name() 
+        {
+            if (string.IsNullOrEmpty(Atl_Name)) 
+            { 
+                return "El Nombre es obligatorio.";
+            }
+
+            return null;
+        }
+
+        private string validate_lastname()
+        {
+            if (string.IsNullOrEmpty(Atl_LastName))
+            {
+                return "El Apellido es obligatorio.";
+            }
+
+            return null;
+        }
+
+        private string validate_height()
+        {
+            if (Atl_Height <= 0)
+            {
+                return "La altura debe ser mayor a 0.";
+            }
+
+            return null;
+        }
+
+        private string validate_weight()
+        {
+            if (Atl_Weight <= 0)
+            {
+                return "El peso debe ser mayor a 0.";
+            }
+
+            return null;
+        }
+
+        public Atleta(string atl_Name, string atl_LastName, int atl_DNI, string atl_Email, string atl_Nationality, string atl_Coach, string atl_Gender, double atl_Height, DateTime atl_BirthDate, double atl_Weight, string atl_Address)
         {
             NEXTID++;
             this.Atl_ID = NEXTID;
@@ -75,7 +123,7 @@ namespace ClasesBase
             Atl_Nationality = atl_Nationality;
             Atl_Coach = atl_Coach;
             Atl_Gender = atl_Gender;
-            Atl_Heigth = atl_Heigth;
+            Atl_Height = atl_Height;
             Atl_BirthDate = atl_BirthDate;
             Atl_Weight = atl_Weight;
             Atl_Address = atl_Address;
@@ -95,7 +143,7 @@ namespace ClasesBase
                             "Nacionalidad: " + this.Atl_Nationality + "\n" +
                             "Entrenador: " + this.Atl_Coach + "\n" +
                             "Genero: " + this.Atl_Gender + "\n" +
-                            "Altura: " + this.Atl_Heigth + "\n" +
+                            "Altura: " + this.Atl_Height + "\n" +
                             "Peso: " + this.Atl_Weight + "\n" +
                             "Fecha de Nacimiento: " + this.Atl_BirthDate + "\n" +
                             "Direccion: " + this.Atl_Address + "\n" +
