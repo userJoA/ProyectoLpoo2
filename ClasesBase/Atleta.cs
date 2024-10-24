@@ -38,19 +38,19 @@ namespace ClasesBase
                 string msg_error = null;
                 switch (columnName)
                 {
-                    case "DNI":
+                    case "Atl_DNI":
                             msg_error = validate_DNI();
                         break;
-                    case "Nombre":
+                    case "Atl_Name":
                             msg_error = validate_name();
                         break;
-                    case "Apellido":
+                    case "Atl_LastName":
                             msg_error = validate_lastname();
                         break;
-                    case "Altura":
+                    case "Atl_Height":
                             msg_error = validate_height();
                         break;
-                    case "Peso":
+                    case "Atl_Weight":
                             msg_error = validate_weight();
                         break;
                 }

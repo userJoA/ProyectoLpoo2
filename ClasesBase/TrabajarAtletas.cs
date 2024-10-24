@@ -10,7 +10,7 @@ namespace ClasesBase
 {
     public class TrabajarAtletas
     {
-        public DataTable getAtlById(int atlId)
+        public static DataTable getAtlById(int atlId)
         {
             using (DataTable dt = new DataTable())
             {
@@ -27,7 +27,18 @@ namespace ClasesBase
             }
         }
 
-        public void addAtl(Atleta oAtl)
+        public Atleta getAtl()
+        {
+            Atleta oatl = new Atleta();
+            oatl.Atl_Name = "";
+            oatl.Atl_LastName = string.Empty;
+            oatl.Atl_DNI = 11111111;
+            oatl.Atl_Height = 0;
+            oatl.Atl_Weight = 0;
+
+            return oatl;
+        }
+        public static void addAtl(Atleta oAtl)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.DBApp);
 
@@ -39,14 +50,14 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@nom", oAtl.Atl_Name);
             cmd.Parameters.AddWithValue("@ape", oAtl.Atl_LastName);
             cmd.Parameters.AddWithValue("@dni", oAtl.Atl_DNI);
-            cmd.Parameters.AddWithValue("@nac", oAtl.Atl_Nationality);
-            cmd.Parameters.AddWithValue("@entrenador", oAtl.Atl_Coach);
-            cmd.Parameters.AddWithValue("@gen", oAtl.Atl_Gender);
+            cmd.Parameters.AddWithValue("@nac", DBNull.Value);
+            cmd.Parameters.AddWithValue("@entrenador", DBNull.Value);
+            cmd.Parameters.AddWithValue("@gen", DBNull.Value);
             cmd.Parameters.AddWithValue("@alt", oAtl.Atl_Height);
             cmd.Parameters.AddWithValue("@peso", oAtl.Atl_Weight);
-            cmd.Parameters.AddWithValue("@fnac", oAtl.Atl_BirthDate);
-            cmd.Parameters.AddWithValue("@dir", oAtl.Atl_Address);
-            cmd.Parameters.AddWithValue("@email", oAtl.Atl_Email);
+            cmd.Parameters.AddWithValue("@fnac", DBNull.Value);
+            cmd.Parameters.AddWithValue("@dir", DBNull.Value);
+            cmd.Parameters.AddWithValue("@email", DBNull.Value);
 
 
             cnn.Open();
@@ -54,7 +65,7 @@ namespace ClasesBase
             cnn.Close();
         }
 
-        public void updateAtl(Atleta oAtl)
+        public static void updateAtl(Atleta oAtl)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.DBApp);
 
@@ -80,7 +91,7 @@ namespace ClasesBase
             cnn.Close();
         }
 
-        public void deleteAtl(int atlId)
+        public static void deleteAtl(int atlId)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.DBApp);
 

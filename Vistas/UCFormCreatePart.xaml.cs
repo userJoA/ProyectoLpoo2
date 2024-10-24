@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClasesBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,23 @@ namespace Vistas
         public UCFormCreatePart()
         {
             InitializeComponent();
+            Atleta oAtl= new Atleta();
+            this.DataContext = oAtl;
         }
 
         private void btnCrateAtl_Click(object sender, RoutedEventArgs e)
         {
-
+            {
+                Atleta oAtl = new Atleta();
+                oAtl.Atl_Name = txtName.Text;
+                oAtl.Atl_LastName = txtLastName.Text;
+                oAtl.Atl_DNI = Convert.ToInt32(txtDNI.Text);
+                oAtl.Atl_Height = Convert.ToDouble(txtHeight.Text);
+                oAtl.Atl_Weight = Convert.ToDouble(txtWeight.Text);
+                oAtl.ToString();
+                TrabajarAtletas.addAtl(oAtl);
+                MessageBox.Show("Participante agregado correctamente.");
+            }
         }
     }
 }
