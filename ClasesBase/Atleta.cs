@@ -13,7 +13,7 @@ namespace ClasesBase
     public class Atleta:IDataErrorInfo
     {
         private static int NEXTID = 0;
-        private int Atl_ID { get; set; }
+        public int Atl_ID { get; set; }
         public string? Atl_Name { get; set; }
         public string? Atl_LastName { get; set; }
         public int Atl_DNI { get;set; }
@@ -21,9 +21,9 @@ namespace ClasesBase
         public string? Atl_Nationality { get; set; }
         public string? Atl_Coach { get; set; }
         public string? Atl_Gender { get; set; }
-        public double Atl_Height { get; set; }
-        public DateTime Atl_BirthDate { get;set ;}
-        public double Atl_Weight { get; set; }
+        public double? Atl_Height { get; set; }
+        public DateTime? Atl_BirthDate { get;set ;}
+        public double? Atl_Weight { get; set; }
         public string? Atl_Address { get; set; }
 
         public string Error

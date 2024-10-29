@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vistas"
         mc:Ignorable="d"
-        Title="ValidarAtleta" Height="450" Width="800">
+        Title="ValidarAtleta" Height="450" Width="1000">
     <Grid>
-        
+        <TextBlock FontSize="16" HorizontalAlignment="Center" Width="998" > la funcionalidad de Validar atleta se implemento en la vista ParticpantesView en los User controls UCFormCreatePart y UCFormUpdatePart</TextBlock>
     </Grid>
 </Window>

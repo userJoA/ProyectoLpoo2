@@ -27,9 +27,48 @@ namespace Vistas
             Atleta oAtl= new Atleta();
             this.DataContext = oAtl;
         }
+        private bool ValidarFormulario()
+        {
 
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("El campo Nombre es obligatorio.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtLastName.Text))
+            {
+                MessageBox.Show("El campo Apellido es obligatorio.");
+                return false;
+            }
+
+
+            if (string.IsNullOrWhiteSpace(txtDNI.Text) || !int.TryParse(txtDNI.Text, out _))
+            {
+                MessageBox.Show("El campo DNI es obligatorio y debe contener solo números.");
+                return false;
+            }
+
+
+            if (string.IsNullOrWhiteSpace(txtWeight.Text) || !double.TryParse(txtWeight.Text, out _))
+            {
+                MessageBox.Show("El campo Peso es obligatorio y debe contener solo números.");
+                return false;
+            }
+
+
+            if (string.IsNullOrWhiteSpace(txtHeight.Text) || !double.TryParse(txtHeight.Text, out _))
+            {
+                MessageBox.Show("El campo Altura es obligatorio y debe contener solo números.");
+                return false;
+            }
+
+
+            return true;
+        }
         private void btnCrateAtl_Click(object sender, RoutedEventArgs e)
         {
+            if(ValidarFormulario())
             {
                 Atleta oAtl = new Atleta();
                 oAtl.Atl_Name = txtName.Text;

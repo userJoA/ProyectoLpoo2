@@ -24,5 +24,11 @@ namespace Vistas
         {
             InitializeComponent();
         }
+
+        private void btnFormPt3_Click(object sender, RoutedEventArgs e)
+        {
+            Window formPT3 = new EstadosCompetenciaV();
+            formPT3.ShowDialog();
+        }
     }
 }

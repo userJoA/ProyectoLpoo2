@@ -47,6 +47,11 @@ namespace Vistas
         {
             ContentArea.Content = new UCFormCreatePart();
         }
+
+        private void btnGetPartById_Click(object sender, RoutedEventArgs e)
+        {
+            ContentArea.Content = new UCFormUpdatePart();
+        }
         //public void clear() 
         //{ 
         //    txtName.Clear();

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<nationality>
+	<state name="argentino/a"/>
+	<state name="brasilero/a"/>
+	<state name="uruguayo/a"/>
+	<state name="chileno/a"/>
+	<state name="boliviano/a"/>
+	<state name="paraguayo/a"/>
+	<state name="venezolano/a"/>
+	<state name="ecuatoriano/a"/>
+	<state name="peruano/a"/>
+	<state name="otro"/>
+</nationality>

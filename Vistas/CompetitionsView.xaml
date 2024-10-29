@@ -14,7 +14,11 @@
             x:Key="list_Comptencies"/>
     </UserControl.Resources>
     <Grid Background="DarkGray">
-        <ListView Name ="Competencias"  Margin="15,58,10,265" ItemsSource="{Binding Source={StaticResource list_Comptencies}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="0" Name ="Competencias" Height="200" BorderBrush="Black" Width="Auto" BorderThickness="1"  ItemsSource="{Binding Source={StaticResource list_Comptencies}}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="100" Header="Nombre" DisplayMemberBinding="{Binding Path=Com_Nombre}"/>
@@ -27,9 +31,12 @@
                     <GridViewColumn Width="150" Header="Sponsors" DisplayMemberBinding="{Binding Path=Com_Sponsors}"/>
                     <GridViewColumn Width="150" Header="ID Cat" DisplayMemberBinding="{Binding Path=Cat_ID}"/>
                     <GridViewColumn Width="150" Header="ID Dis" DisplayMemberBinding="{Binding Path=Dis_ID}"/>
-
                 </GridView>
             </ListView.View>
         </ListView>
+
+        <Grid Grid.Row="1" Margin="10">
+            <Button Height="50" Width="150" x:Name="btnFormPt3" Click="btnFormPt3_Click">Formulario del Punto 3</Button>
+        </Grid>
     </Grid>
 </UserControl>
