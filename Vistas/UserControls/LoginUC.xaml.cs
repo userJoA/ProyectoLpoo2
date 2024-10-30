@@ -101,13 +101,13 @@ namespace Vistas
             }
         }
 
-        // Método para cerrar la ventana padre
+        //cierra el login
         private void CloseParentWindow()
         {
-            Window parentWindow = Window.GetWindow(this);  // Obtiene la ventana que contiene el control de usuario
+            Window parentWindow = Window.GetWindow(this);  
             if (parentWindow != null)
             {
-                parentWindow.Close();  // Cierra la ventana
+                parentWindow.Close();  
             }
         }
     }

@@ -10,10 +10,18 @@
 
   <ItemGroup>
     <None Remove="EstadosComp.xml" />
+    <None Remove="Resources\XMLFiles\gender.xml" />
+    <None Remove="Resources\XMLFiles\Nationality.xml" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="EstadosComp.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\XMLFiles\gender.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\XMLFiles\Nationality.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
