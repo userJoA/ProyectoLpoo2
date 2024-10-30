@@ -57,7 +57,7 @@ namespace ClasesBase
                     Atl_Coach = row["Atl_Entrenador"] != DBNull.Value ? row["Atl_Entrenador"].ToString() : null,
                     Atl_Gender = row["Atl_Genero"] != DBNull.Value ? row["Atl_Genero"].ToString() : null,
                     Atl_Height = (double)row["Atl_Altura"],
-                    Atl_BirthDate = row["Atl_FechaNac"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(row["Atl_FechaNac"]),
+                    Atl_BirthDate = row["Atl_FechaNac"] == DBNull.Value ? DateTime.Now : Convert.ToDateTime(row["Atl_FechaNac"]),
                     Atl_Weight = (double)row["Atl_Peso"],
                     Atl_Address = row["Atl_Dirección"] != DBNull.Value ? row["Atl_Dirección"].ToString() : null
                 };
