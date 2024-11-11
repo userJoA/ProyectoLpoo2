@@ -1,7 +1,5 @@
-﻿using ClasesBase;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,22 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Vistas
+namespace Vistas.UserControls.vistasUsuario
 {
     /// <summary>
-    /// Lógica de interacción para SystemView.xaml
+    /// Lógica de interacción para ListaDeUsuario.xaml
     /// </summary>
-    public partial class SystemView : UserControl
+    public partial class ListaDeUsuario : UserControl
     {
-        public SystemView()
+        public ListaDeUsuario()
         {
             InitializeComponent();
-        }
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            ContentAreaUser.Content = new ABMUsuarios();
-            
         }
     }
 }

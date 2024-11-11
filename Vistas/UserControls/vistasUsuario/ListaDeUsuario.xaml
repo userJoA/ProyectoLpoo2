@@ -1,16 +1,12 @@
-﻿<UserControl x:Class="Vistas.SystemView"
+﻿<UserControl x:Class="Vistas.UserControls.vistasUsuario.ListaDeUsuario"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             Loaded="UserControl_Loaded"
-             xmlns:local="clr-namespace:Vistas"
+             xmlns:local="clr-namespace:Vistas.UserControls.vistasUsuario"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Border>
-            <!--<local:ABMUsuarios x:Name="ABMUsuarios"/>-->
-            <ContentControl x:Name="ContentAreaUser"/>
-        </Border>
+            
     </Grid>
 </UserControl>

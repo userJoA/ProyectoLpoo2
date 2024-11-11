@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="Vistas.UserControls.ActualizarUsuario"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             Loaded="UserControl_Loaded"
+             xmlns:svc ="clr-namespace:ClasesBase;assembly=ClasesBase"
+             xmlns:local="clr-namespace:Vistas.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="LIST_ROLES"
+                            ObjectType="{x:Type svc:TrabajarRoles}"
+                            MethodName="TraerRoles">
+        </ObjectDataProvider>
+    </UserControl.Resources>
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" Background="#eb2d53" >
+            <StackPanel Name="btnSeccion" Margin="30">
+                <StackPanel Height="50">
+                    <TextBlock Text="Actualizar Datos" Foreground="White" FontWeight="Bold" Margin="0 15 0 0" FontSize="18" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel  Margin="0 15 0 0">
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Text="ID" Height="25" Foreground="White" Padding="5" Margin="0 5 0 0"/>
+                        <TextBlock x:Name="txtbID" Text="{Binding Usu_ID}" Width="140" Margin="111 0 0 0" Background="Beige" VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Text="Apellido" Height="25" Foreground="White" Padding="5" Margin="0 5 0 0"/>
+                        <TextBox x:Name="txtApellido" Text="{Binding Usu_LastName}" Width="140" Margin="80 0 0 0" VerticalAlignment="Center"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Text="Nombre" Height="25" Foreground="White" Padding="5" Margin="0 5 0 0"/>
+                        <TextBox x:Name="txtNombre" Text="{Binding Usu_NameO}" Width="140" Margin="80 0 0 0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Text="Nombre de Usuario" Height="25" Foreground="White" Padding="5" Margin="0 5 0 0"/>
+                        <TextBox x:Name="txtNombreUsuario" Text="{Binding Usu_Name}" Width="140" Margin="20 0 0 0" VerticalAlignment="Center"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Text="Password" Height="25" Foreground="White" Padding="5" Margin="0 5 0 0"/>
+                        <TextBox x:Name="txtPassword" Text="{Binding Usu_Password}" Width="140" Margin="75 0 0 0" VerticalAlignment="Center"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Text="Rol" Height="25" Foreground="White" Padding="5" Margin="0 5 0 0"/>
+                        <ComboBox x:Name="cmbRoles"
+                                  ItemsSource="{Binding Source={StaticResource LIST_ROLES}}"
+                                  DisplayMemberPath="Rol_Description"
+                                  SelectedValuePath="Rol_Code"
+                                  SelectedValue="{Binding Rol.Rol_Code, Mode=TwoWay}"
+                                  Margin="108 0 0 0"
+                                  Width="140"
+                                  VerticalAlignment="Center">
+                        </ComboBox>
+
+                    </StackPanel>
+                    <StackPanel Height="50">
+                        <Button x:Name="btnActualizarUsuario" Height="25" Margin="0 10 0 0" Click="btnActualizarUsuario_Click" >Actualizar</Button>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2">
+            <Button x:Name="btnAtras" Width="100" Margin="0 5 0 0" HorizontalAlignment="Right" Click="btnAtras_Click">Atras</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

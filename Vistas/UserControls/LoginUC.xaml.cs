@@ -43,15 +43,15 @@ namespace Vistas
             Usuario oOpe = new Usuario();
             oAud.Usu_Name = "auditor";
             oAud.Usu_Password = "auditor";
-            oAud.Rol_Code = 1;
+            oAud.Rol.Rol_Code = 1;
 
             oAdmin.Usu_Name = "admin";
             oAdmin.Usu_Password = "admin";
-            oAdmin.Rol_Code = 2;
+            oAdmin.Rol.Rol_Code = 2;
 
             oOpe.Usu_Name = "operador";
             oOpe.Usu_Password = "operador";
-            oOpe.Rol_Code = 3;
+            oOpe.Rol.Rol_Code = 3;
             if (txtUser.Text == "" || txtPassword.Password == "")
             {
                 MessageBox.Show("Ningun campo puede estar vacio");
@@ -64,7 +64,7 @@ namespace Vistas
                 logginSuccess = true;
                 oUser.Usu_Name = "auditor";
                 oUser.Usu_Password = "auditor";
-                oUser.Rol_Code = 1;
+                oUser.Rol.Rol_Code = 1;
                 MainMenu vMain = new MainMenu();
                 vMain.Show();
                 Application.Current.MainWindow = vMain;
@@ -75,7 +75,7 @@ namespace Vistas
                 logginSuccess = true;
                 oUser.Usu_Name = "admin";
                 oUser.Usu_Password = "admin";
-                oUser.Rol_Code = 2;
+                oUser.Rol.Rol_Code = 2;
                 MainMenu vMain = new MainMenu();
                 vMain.Show();
                 Application.Current.MainWindow = vMain;
@@ -86,7 +86,7 @@ namespace Vistas
                 logginSuccess = true;
                 oUser.Usu_Name = "operador";
                 oUser.Usu_Password = "operador";
-                oUser.Rol_Code = 3;
+                oUser.Rol.Rol_Code = 3;
                 MainMenu vMain = new MainMenu();
                 vMain.Show();
                 Application.Current.MainWindow = vMain;

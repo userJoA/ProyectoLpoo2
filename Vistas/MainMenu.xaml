@@ -38,7 +38,7 @@
                         <TextBlock FontSize="16"
                                    Foreground="White"
                                    VerticalAlignment="Center">
-                            Sistemas
+                            Usuarios
                         </TextBlock>
                     </Button>
                     <Button x:Name="btnCompetition" Height="40"
