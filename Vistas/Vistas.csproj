@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="EstadosComp.xml" />
+    <None Remove="Resources\img\bars.png" />
+    <None Remove="Resources\img\run.png" />
     <None Remove="Resources\XMLFiles\gender.xml" />
     <None Remove="Resources\XMLFiles\Nationality.xml" />
   </ItemGroup>
@@ -27,7 +29,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ClasesBase\ClasesBase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\img\bars.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\img\run.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

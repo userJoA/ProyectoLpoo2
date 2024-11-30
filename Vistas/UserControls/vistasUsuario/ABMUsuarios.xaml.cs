@@ -110,5 +110,11 @@ namespace Vistas
         {
             Content = new ListaDeUsuario();
         }
+
+        private void btnImpresionUsuarios_Click(object sender, RoutedEventArgs e)
+        {
+            Window vImpUsuarios = new VistaImpresionUsuarios();
+            vImpUsuarios.Show();
+        }
     }
 }

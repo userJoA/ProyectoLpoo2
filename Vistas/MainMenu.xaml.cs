@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Vistas
 {
@@ -40,34 +29,24 @@ namespace Vistas
             WindowState = WindowState.Minimized;
         }
 
-        private void btnCategories_Click(object sender, RoutedEventArgs e)
+        private void TBShow(object sender, RoutedEventArgs e)
         {
-            ContentArea.Content = new CategoriesView();
+            GridContent.Opacity = 0.5;
+        }
+
+        private void TBHide(object sender, RoutedEventArgs e)
+        {
+            GridContent.Opacity = 1;
+        }
+
+        private void PreviewMouseLeftBtnDown(object sender, MouseButtonEventArgs e)
+        {
+            btnShowHide.IsChecked = false;
         }
 
         private void btnSystem_Click(object sender, RoutedEventArgs e)
         {
-            ContentArea.Content = new SystemView();
-        }
-
-        private void btnCompetition_Click(object sender, RoutedEventArgs e)
-        {
-            ContentArea.Content= new CompetitionsView();
-        }
-
-        private void btnParticipants_Click(object sender, RoutedEventArgs e)
-        {
-            ContentArea.Content = new ParticipantsView();
-        }
-
-        private void btnEvents_Click(object sender, RoutedEventArgs e)
-        {
-            ContentArea.Content = new EventsView();
-        }
-
-        private void btnDiscplines_Click(object sender, RoutedEventArgs e)
-        {
-            ContentArea.Content = new DisciplinesView();
+            DataContext = new ABMUsuarios();
         }
     }
 }
